@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server ./db.json"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.12.1"
+  },
+  "devDependencies": {
+    "jsonfile": "^4.0.0"
   }
 }

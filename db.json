@@ -1,222 +1,382 @@
 {
-  "cards": [
+  "decks": [
     {
-      "slug": "react-redux-the-single-immutable-state-tree",
-      "question":
-        "What is the *entire* state of the application represented as?",
-      "answer": "A single Javascript object."
-    },
-    {
-      "slug":
-        "react-redux-describing-state-changes-with-actions",
-      "question": "What is an action?",
-      "answer":
-        "A minimally represented change of the state"
-    },
-    {
-      "slug": "react-redux-pure-and-impure-functions",
-      "question": "What is a pure function? ",
-      "answer":
-        "A function where the only data it receives is what you pass in, and it always returns a new value that mutates nothing. \nIt does not make network requests or any other form of side effect."
-    },
-    {
-      "slug": "javascript-redux-the-reducer-function",
-      "question":
-        "What do mutations of your application state need to be described by?",
-      "answer":
-        "A pure function, known as a *reducer*, that takes the previous state object, an action object, and returns the next state of your application"
-    },
-    {
-      "slug":
-        "react-redux-writing-a-counter-reducer-with-tests",
-      "question":
-        "If your reducer receives an *undefined* state what should you return",
-      "answer":
-        "If the state is undefined, return the initial state."
-    },
-    {
-      "slug":
-        "react-redux-store-methods-getstate-dispatch-and-subscribe",
-      "question": "How do you define a new Redux store?",
-      "answer":
-        "`const storeName = createStore(reducerName);`"
-    },
-    {
-      "slug": "react-redux-implementing-store-from-scratch",
-      "question":
-        "What method allows you to dispatch actions to the store?",
-      "answer": "`storeName.dispatch('ACTION_NAME');`"
-    },
-    {
-      "slug": "react-redux-react-counter-example",
-      "question":
-        "How do you subscribe to a react component? ",
-      "answer":
-        "You can define a component and then call it within a method. \nYou can then `.subscribe()` to said method."
-    },
-    {
-      "slug":
-        "react-redux-avoiding-array-mutations-with-concat-slice-and-spread",
-      "question": "What is a mutation?",
-      "answer":
-        "When the original data is modified in some way, as opposed to creating new data."
-    },
-    {
-      "slug":
-        "react-redux-avoiding-object-mutations-with-object-assign-and-spread",
-      "question":
-        "How do you update an object without mutating the original?",
-      "answer":
-        "You call `Object.assign()` with an empty object, the old object, and the property that you wish to update."
-    },
-    {
-      "slug":
-        "react-redux-writing-a-todo-list-reducer-adding-a-todo",
-      "question":
-        "In the reducer, how do you handle incoming actions?",
-      "answer":
-        "Via a `switch` statement that takes the `.type` off of the incoming action."
-    },
-    {
-      "slug":
-        "react-redux-writing-a-todo-list-reducer-toggling-a-todo",
-      "question":
-        "How do you change the state when there are multiple items within the state?",
-      "answer":
-        "You can iterate over the array using `.map()`, at it returns a new array as opposed to mutating the original state. \nRemember to still `return` items that you would still wish to keep in the state!"
-    },
-    {
-      "slug": "react-redux-reducer-composition-with-arrays",
-      "question": "What is *Reducer Composition*? ",
-      "answer":
-        "It is when you call to other reducers within a parent reducer."
-    },
-    {
-      "slug":
-        "react-redux-reducer-composition-with-objects",
-      "question":
-        "How can we store new information without changing existing reducers?",
-      "answer":
-        "We can use reducer composition to call existing reducers within a new reducer, and combine the parts into a state object."
-    },
-    {
-      "slug":
-        "react-redux-reducer-composition-with-combinereducers",
-      "question":
-        "What do we pass into the `combineReducers()` method?",
-      "answer":
-        "An object of `stateField: Reducer` key/value pairs."
-    },
-    {
-      "slug":
-        "javascript-redux-implementing-combinereducers-from-scratch",
-      "question":
-        "In redux, what is an important concept of functional programming that you should always remember?",
-      "answer":
-        "That functions can be passed other functions as arguments and can return functions."
-    },
-    {
-      "slug":
-        "react-redux-react-todo-list-example-adding-a-todo",
-      "question": "What is a *root reducer*?",
-      "answer": "The reducer you create the store with"
-    },
-    {
-      "slug":
-        "react-redux-react-todo-list-example-toggling-a-todo",
-      "question": "",
-      "answer": ""
-    },
-    {
-      "slug":
-        "react-redux-react-todo-list-example-filtering-todos",
-      "question":
-        "How do you write a component that can change the application state?",
-      "answer":
-        "1. Write a component that is capable of event handling \n2. Render the component to the DOM, passing an action type as a prop. \n3. Write a reducer to handle said action"
-    },
-    {
-      "slug":
-        "react-redux-extracting-presentational-components-todo-todolist",
-      "question": "What is a presentational component?",
-      "answer":
-        "Components that are only concerned with presenting in the DOM."
-    },
-    {
-      "slug":
-        "react-redux-extracting-presentational-components-addtodo-footer-filterlink",
-      "question":
-        "How do you move functionality outside of a presentational component?",
-      "answer":
-        "By replacing it with a named prop that you can pass the functionality to when calling the component."
-    },
-    {
-      "slug":
-        "react-redux-extracting-container-components-filterlink",
-      "question":
-        "How do you avoid passing props down all the way from the top down to your presentational components?",
-      "answer":
-        "By moving functionality passed down from top level components into a self contained *Container Component* that is capable of reading from the store's state."
-    },
-    {
-      "slug":
-        "react-redux-extracting-container-components-visibletodolist-addtodo",
-      "question":
-        "What is the job of a container component?",
-      "answer":
-        "To connect a presentational component to the store and specify the data and the behavior that it needs."
-    },
-    {
-      "slug":
-        "react-redux-passing-the-store-down-explicitly-via-props",
-      "question":
-        "Why wouldn't you want to have a global reference to the store in a real application?",
-      "answer":
-        "Having a global reference to the store would make you application much harder to test, you may want to test your code with different mock stores."
-    },
-    {
-      "slug":
-        "react-redux-passing-the-store-down-implicitly-via-context",
-      "question":
-        "What method allows you to pass a context down to all of the component's children and grandchildren?",
-      "answer": "`childContextTypes`"
-    },
-    {
-      "slug":
-        "react-redux-passing-the-store-down-with-provider-from-react-redux",
-      "question":
-        "What library provides you with a `<Provider>` component?",
-      "answer": "ReactRedux"
-    },
-    {
-      "slug":
-        "react-redux-generating-containers-with-connect-from-react-redux-visibletodolist",
-      "question":
-        "How do you write a container component using the `connect` method?",
-      "answer":
-        "You write two functions, one that returns an object with the props that depend on the redux store, and another that returns a dispatch method. \n\nThen define a function that calls `connect()` with the two functions you just wrote. Call a second time to `connect` with the presentational component passed in, since it is a curried function. Example: \n\n`const funcName = connect(mapeStateToProps, mapDispatchToProps)(PresentationComponent)`"
-    },
-    {
-      "slug":
-        "react-redux-generating-containers-with-connect-from-react-redux-addtodo",
-      "question":
-        "What is the default behavior if you leave the `mapDispatchToProps` argument in `connect` empty?",
-      "answer":
-        "It will just inject the `dispatch` function as a prop!"
-    },
-    {
-      "slug":
-        "react-redux-generating-containers-with-connect-from-react-redux-footerlink",
-      "question":
-        "How do you get access to the container component's props when you are using the `connect` pattern?",
-      "answer":
-        "As a second argument to `mapStateToProps` and `mapDispatchToProps` you can declare a variable that has access to the container's props."
-    },
-    {
-      "slug": "react-redux-extracting-action-creators",
-      "question": "What is an action creator?",
-      "answer":
-        "It is a function that composes an action. They are more maintainable than writing actions inline."
+      "id": 0,
+      "name": "redux",
+      "cards": [
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-the-single-immutable-state-tree",
+          "question":
+            "What is the *entire* state of the application represented as?",
+          "answer": "A single Javascript object.",
+          "id": 0
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-describing-state-changes-with-actions",
+          "question": "What is an action?",
+          "answer":
+            "A minimally represented change of the state",
+          "id": 1
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug": "react-redux-pure-and-impure-functions",
+          "question": "What is a pure function? ",
+          "answer":
+            "A function where the only data it receives is what you pass in, and it always returns a new value that mutates nothing. It does not make network requests or any other form of side effect.",
+          "id": 2
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug": "javascript-redux-the-reducer-function",
+          "question":
+            "What do mutations of your application state need to be described by?",
+          "answer":
+            "A pure function, known as a *reducer*, that takes the previous state object, an action object, and returns the next state of your application",
+          "id": 3
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-writing-a-counter-reducer-with-tests",
+          "question":
+            "If your reducer receives an *undefined* state what should you return",
+          "answer":
+            "If the state is undefined, return the initial state.",
+          "id": 4
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-store-methods-getstate-dispatch-and-subscribe",
+          "question":
+            "How do you define a new Redux store?",
+          "answer":
+            "`const storeName = createStore(reducerName);`",
+          "id": 5
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-implementing-store-from-scratch",
+          "question":
+            "What method allows you to dispatch actions to the store?",
+          "answer": "`storeName.dispatch('ACTION_NAME');`",
+          "id": 6
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug": "react-redux-react-counter-example",
+          "question":
+            "How do you subscribe to a react component? ",
+          "answer":
+            "You can define a component and then call it within a method. You can then `.subscribe()` to said method.",
+          "id": 7
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-avoiding-array-mutations-with-concat-slice-and-spread",
+          "question": "What is a mutation?",
+          "answer":
+            "When the original data is modified in some way, as opposed to creating new data.",
+          "id": 8
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-avoiding-object-mutations-with-object-assign-and-spread",
+          "question":
+            "How do you update an object without mutating the original?",
+          "answer":
+            "You call `Object.assign()` with an empty object, the old object, and the property that you wish to update.",
+          "id": 9
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-writing-a-todo-list-reducer-adding-a-todo",
+          "question":
+            "In the reducer, how do you handle incoming actions?",
+          "answer":
+            "Via a `switch` statement that takes the `.type` off of the incoming action.",
+          "id": 10
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-writing-a-todo-list-reducer-toggling-a-todo",
+          "question":
+            "How do you change the state when there are multiple items within the state?",
+          "answer":
+            "You can iterate over the array using `.map()`, at it returns a new array as opposed to mutating the original state. Remember to still `return` items that you would still wish to keep in the state!",
+          "id": 11
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-reducer-composition-with-arrays",
+          "question": "What is *Reducer Composition*? ",
+          "answer":
+            "It is when you call to other reducers within a parent reducer.",
+          "id": 12
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-reducer-composition-with-objects",
+          "question":
+            "How can we store new information without changing existing reducers?",
+          "answer":
+            "We can use reducer composition to call existing reducers within a new reducer, and combine the parts into a state object.",
+          "id": 13
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-reducer-composition-with-combinereducers",
+          "question":
+            "What do we pass into the `combineReducers()` method?",
+          "answer":
+            "An object of `stateField: Reducer` key/value pairs.",
+          "id": 14
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "javascript-redux-implementing-combinereducers-from-scratch",
+          "question":
+            "In redux, what is an important concept of functional programming that you should always remember?",
+          "answer":
+            "That functions can be passed other functions as arguments and can return functions.",
+          "id": 15
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-react-todo-list-example-adding-a-todo",
+          "question": "What is a *root reducer*?",
+          "answer": "The reducer you create the store with",
+          "id": 16
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-react-todo-list-example-toggling-a-todo",
+          "question": "",
+          "answer": "",
+          "id": 17
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-react-todo-list-example-filtering-todos",
+          "question":
+            "How do you write a component that can change the application state?",
+          "answer":
+            "1. Write a component that is capable of event handling 2. Render the component to the DOM, passing an action type as a prop. 3. Write a reducer to handle said action",
+          "id": 18
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-extracting-presentational-components-todo-todolist",
+          "question": "What is a presentational component?",
+          "answer":
+            "Components that are only concerned with presenting in the DOM.",
+          "id": 19
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-extracting-presentational-components-addtodo-footer-filterlink",
+          "question":
+            "How do you move functionality outside of a presentational component?",
+          "answer":
+            "By replacing it with a named prop that you can pass the functionality to when calling the component.",
+          "id": 20
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-extracting-container-components-filterlink",
+          "question":
+            "How do you avoid passing props down all the way from the top down to your presentational components?",
+          "answer":
+            "By moving functionality passed down from top level components into a self contained *Container Component* that is capable of reading from the store's state.",
+          "id": 21
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-extracting-container-components-visibletodolist-addtodo",
+          "question":
+            "What is the job of a container component?",
+          "answer":
+            "To connect a presentational component to the store and specify the data and the behavior that it needs.",
+          "id": 22
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-passing-the-store-down-explicitly-via-props",
+          "question":
+            "Why wouldn't you want to have a global reference to the store in a real application?",
+          "answer":
+            "Having a global reference to the store would make you application much harder to test, you may want to test your code with different mock stores.",
+          "id": 23
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-passing-the-store-down-implicitly-via-context",
+          "question":
+            "What method allows you to pass a context down to all of the component's children and grandchildren?",
+          "answer": "`childContextTypes`",
+          "id": 24
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-passing-the-store-down-with-provider-from-react-redux",
+          "question":
+            "What library provides you with a `<Provider>` component?",
+          "answer": "ReactRedux",
+          "id": 25
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-generating-containers-with-connect-from-react-redux-visibletodolist",
+          "question":
+            "How do you write a container component using the `connect` method?",
+          "answer":
+            "You write two functions, one that returns an object with the props that depend on the redux store, and another that returns a dispatch method. Then define a function that calls `connect()` with the two functions you just wrote. Call a second time to `connect` with the presentational component passed in, since it is a curried function. Example: `const funcName = connect(mapeStateToProps, mapDispatchToProps)(PresentationComponent)`",
+          "id": 26
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-generating-containers-with-connect-from-react-redux-addtodo",
+          "question":
+            "What is the default behavior if you leave the `mapDispatchToProps` argument in `connect` empty?",
+          "answer":
+            "It will just inject the `dispatch` function as a prop!",
+          "id": 27
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug":
+            "react-redux-generating-containers-with-connect-from-react-redux-footerlink",
+          "question":
+            "How do you get access to the container component's props when you are using the `connect` pattern?",
+          "answer":
+            "As a second argument to `mapStateToProps` and `mapDispatchToProps` you can declare a variable that has access to the container's props.",
+          "id": 28
+        },
+        {
+          "reps": 0,
+          "date": "0",
+          "factor": 0,
+          "interval": 0,
+          "slug": "react-redux-extracting-action-creators",
+          "question": "What is an action creator?",
+          "answer":
+            "It is a function that composes an action. They are more maintainable than writing actions inline.",
+          "id": 29
+        }
+      ]
     }
   ]
 }
